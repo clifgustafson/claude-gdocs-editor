@@ -2,7 +2,7 @@
 
 A remote MCP server (custom connector) that lets Claude — including the Claude
 mobile app — search Google Drive and **edit Google Docs and Sheets in real
-time**.
+time**..
 
 Runs free on Cloudflare Workers. Sign-in is handled with Google OAuth, so it
 only ever touches the account you approve.
