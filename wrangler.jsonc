@@ -25,7 +25,7 @@
   "kv_namespaces": [
     {
       "binding": "OAUTH_KV",
-      "id": "npx wrangler kv namespace create BINDING_NAME"
+      "id": "f48e7757a64e4252bd1fdb4b212dcb83"
     }
   ],
   "observability": {
