@@ -1,0 +1,34 @@
+{
+  // Cloudflare Workers configuration for the Claude Google Docs/Sheets editor.
+  //
+  // ⚠️ ONE THING YOU MUST EDIT: the "id" under kv_namespaces below.
+  // See SETUP.md, Part 2, Step 4 for exactly how to get that value.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "claude-gdocs-editor",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-03-10",
+  "compatibility_flags": ["nodejs_compat"],
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["GoogleEditorMCP"]
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "class_name": "GoogleEditorMCP",
+        "name": "MCP_OBJECT"
+      }
+    ]
+  },
+  "kv_namespaces": [
+    {
+      "binding": "OAUTH_KV",
+      "id": "PASTE_YOUR_KV_NAMESPACE_ID_HERE"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}
