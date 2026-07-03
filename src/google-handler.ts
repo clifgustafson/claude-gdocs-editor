@@ -146,6 +146,10 @@ app.get("/callback", async (c) => {
 /** Simple homepage so visiting the URL in a browser shows something sane. */
 app.get("/", (c) =>
   c.text(
+ `CLIENT_ID visible: ${Boolean(c.env.GOOGLE_CLIENT_ID)}\n` +
+    `CLIENT_SECRET visible: ${Boolean(c.env.GOOGLE_CLIENT_SECRET)}`
+  )
+);
     "Claude Google Docs & Sheets editor is running. Add this URL as a custom connector in Claude (Settings > Connectors)."
   )
 );
